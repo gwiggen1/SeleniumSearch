@@ -15,14 +15,13 @@ Search = input('What Should I Search?  ')
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
-#allows the browser to be independent program (remain open)
 wbrowser = webdriver.Chrome(chrome_options=chrome_options)
 
 #Opens Google in web browser
 wbrowser.get("https://google.com") #Can switch out with Bing or Other Search Engine Url bc field name is also 'q'
 wbrowser.maximize_window()
 
-#Finds search bar, Enters Bing in search bar, Submits
+#Finds search bar, Enters Search variable in search bar, Submits
 input_Element = wbrowser.find_element(By.NAME,'q')
 input_Element.send_keys(Search)
 input_Element.submit()
